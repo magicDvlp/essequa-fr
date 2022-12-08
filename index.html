@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru" class="html-hidden">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title></title>
+    <style>
+      html.html-hidden {
+        width: 100%;
+        overflow: hidden
+      }
+
+      .preload {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: url('img/loading.svg') no-repeat center center #fff;
+        background-size: 200px 200px;
+        z-index: 9999;
+        left: 0;
+        top: 0
+      }
+
+      body {
+        overflow: hidden;
+        visibility: hidden
+      }
+    </style>
+    <script>
+      let externalVar = {
+        nonce: 'sadfsdf',
+        ajaxUrl: '',
+        baseUrl: '',
+      };
+    </script>
+    <style>
+      @font-face{font-display:swap;font-family:EBGaramond;font-style:normal;font-weight:500;src:url(font/EBGaramond-Medium.woff2) format("woff2")}@font-face{font-display:swap;font-family:EBGaramond;font-style:italic;font-weight:500;src:url(font/EBGaramond-MediumItalic.woff2) format("woff2")}.hamburger{background-color:transparent;border:0;color:inherit;display:inline-block;font:inherit;margin:0;overflow:visible;padding:0;text-transform:none}.hamburger-box{display:inline-block;height:24px;position:relative;width:35px}.hamburger-inner{display:block;margin-top:-2px;top:50%}.hamburger-inner,.hamburger-inner:after,.hamburger-inner:before{background-color:#bba56f;border-radius:4px;height:4px;position:absolute;width:35px}.hamburger-inner:after,.hamburger-inner:before{content:"";display:block}.hamburger-inner:before{top:-10px}.hamburger-inner:after{bottom:-10px}.hamburger--collapse .hamburger-inner{bottom:0;top:auto}.hamburger--collapse .hamburger-inner:after{top:-20px}*,:after,:before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{background-color:var(--bs-body-bg);color:var(--bs-body-color);font-family:var(--bs-body-font-family);font-size:var(--bs-body-font-size);font-weight:var(--bs-body-font-weight);line-height:var(--bs-body-line-height);margin:0;text-align:var(--bs-body-text-align)}p{margin-bottom:1rem;margin-top:0}a{color:var(--bs-link-color);text-decoration:underline}img,svg{vertical-align:middle}button{border-radius:0}button,input,textarea{font-family:inherit;font-size:inherit;line-height:inherit;margin:0}button{text-transform:none}[type=button],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}textarea{resize:vertical}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::file-selector-button{-webkit-appearance:button;font:inherit}:root{--bs-blue:#0d6efd;--bs-indigo:#6610f2;--bs-purple:#6f42c1;--bs-pink:#d63384;--bs-red:#dc3545;--bs-orange:#fd7e14;--bs-yellow:#ffc107;--bs-green:#198754;--bs-teal:#20c997;--bs-cyan:#0dcaf0;--bs-black:#000;--bs-white:#fff;--bs-gray:#6c757d;--bs-gray-dark:#343a40;--bs-gray-100:#f8f9fa;--bs-gray-200:#e9ecef;--bs-gray-300:#dee2e6;--bs-gray-400:#ced4da;--bs-gray-500:#adb5bd;--bs-gray-600:#6c757d;--bs-gray-700:#495057;--bs-gray-800:#343a40;--bs-gray-900:#212529;--bs-primary:#0d6efd;--bs-secondary:#6c757d;--bs-success:#198754;--bs-info:#0dcaf0;--bs-warning:#ffc107;--bs-danger:#dc3545;--bs-light:#f8f9fa;--bs-dark:#212529;--bs-primary-rgb:13,110,253;--bs-secondary-rgb:108,117,125;--bs-success-rgb:25,135,84;--bs-info-rgb:13,202,240;--bs-warning-rgb:255,193,7;--bs-danger-rgb:220,53,69;--bs-light-rgb:248,249,250;--bs-dark-rgb:33,37,41;--bs-white-rgb:255,255,255;--bs-black-rgb:0,0,0;--bs-body-color-rgb:33,37,41;--bs-body-bg-rgb:255,255,255;--bs-font-sans-serif:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--bs-font-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;--bs-gradient:linear-gradient(180deg,hsla(0,0%,100%,.15),hsla(0,0%,100%,0));--bs-body-font-family:var(--bs-font-sans-serif);--bs-body-font-size:1rem;--bs-body-font-weight:400;--bs-body-line-height:1.5;--bs-body-color:#212529;--bs-body-bg:#fff;--bs-border-width:1px;--bs-border-style:solid;--bs-border-color:#dee2e6;--bs-border-color-translucent:rgba(0,0,0,.175);--bs-border-radius:0.375rem;--bs-border-radius-sm:0.25rem;--bs-border-radius-lg:0.5rem;--bs-border-radius-xl:1rem;--bs-border-radius-2xl:2rem;--bs-border-radius-pill:50rem;--bs-link-color:#0d6efd;--bs-link-hover-color:#0a58ca;--bs-code-color:#d63384;--bs-highlight-bg:#fff3cd}.container{--bs-gutter-x:3rem;--bs-gutter-y:0;margin-left:auto;margin-right:auto;padding-left:calc(var(--bs-gutter-x)*.5);padding-right:calc(var(--bs-gutter-x)*.5);width:100%}.row{--bs-gutter-x:3rem;--bs-gutter-y:0;display:flex;flex-wrap:wrap;margin-left:calc(var(--bs-gutter-x)*-.5);margin-right:calc(var(--bs-gutter-x)*-.5);margin-top:calc(var(--bs-gutter-y)*-1)}.row>*{box-sizing:border-box;flex-shrink:0;margin-top:var(--bs-gutter-y);max-width:100%;padding-left:calc(var(--bs-gutter-x)*.5);padding-right:calc(var(--bs-gutter-x)*.5);width:100%}.col-4{flex:0 0 auto;width:33.33333333%}.col-8{flex:0 0 auto;width:66.66666667%}.d-flex{display:flex!important}.d-none{display:none!important}.align-items-center{align-items:center!important}:root{--fontFamily:"HelveticaNeue";--fontSize:1.6rem;--bodyBackground:#f3f2ee;--textColor:#405578;--primary:#132e5a;--primaryLight:#1e4688;--primaryDarken:#0f2549;--secondary:#405578;--secondaryLight:#526c99;--secondaryDarken:#384a69;--third:#bba56f;--thirdLight:#e0c683;--thirdDarken:#a89565;--headerNoteHeight:31px;--headerHeight:80px;--headerHeightMin:60px;--headerIndent:calc(var(--headerNoteHeight) + var(--headerHeight));--headerIndentMin:91px;scroll-behavior:auto!important}.callback-form__input{height:5.5rem}.callback-form__input,.callback-form__textarea{background:0 0;border:none;border-bottom:1px solid var(--third);width:100%}.callback-form__textarea{height:6rem;resize:none}@media (max-width:1399.98px){:root{--headerNoteHeight:28px;--headerHeight:60px;--headerHeightMin:50px;--headerIndent:calc(var(--headerNoteHeight) + var(--headerHeight));--headerIndentMin:78px}}@media (max-width:575.98px){:root{--headerNoteHeight:28px;--headerHeight:50px;--headerHeightMin:50px;--headerIndent:calc(var(--headerNoteHeight) + var(--headerHeight));--headerIndentMin:78px}.callback-form__input{height:4rem}.callback-form__textarea{height:5rem}}*{outline:0!important}a{color:var(--textColor);text-decoration:none}input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:var(--third);opacity:1}input::-moz-placeholder,textarea::-moz-placeholder{color:var(--third);opacity:1}input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:var(--third);opacity:1}html{font-size:62.5%}body{-webkit-text-size-adjust:100%;background:var(--bodyBackground);color:var(--textColor);display:flex;flex-direction:column;font-family:var(--fontFamily);font-size:var(--fontSize);line-height:normal;min-height:100vh;overflow-x:hidden;overflow-y:auto;position:relative;visibility:visible}img{display:block}.icon{font-size:10px}#submit-modal-error,#submit-modal-success{background:0 0;color:var(--textColor);display:none;flex-direction:column;flex-wrap:wrap;justify-content:center;min-height:100%;padding-left:1rem;padding-right:1rem;width:90%}#submit-modal-error p,#submit-modal-success p{color:#fff;font-size:4rem;font-weight:400;text-align:center;text-transform:uppercase;width:100%}@media (max-width:767px){#submit-modal-error p,#submit-modal-success p{font-size:3rem}}@media (max-width:575px){#submit-modal-error p,#submit-modal-success p{font-size:2.5rem}}.icon{font-size:1rem}.logo{align-items:center;display:flex}.logo,.logo__img{max-height:100%;max-width:100%}.logo__img{height:auto;width:auto}.social-networks{align-items:center;display:flex}.social-networks__item{display:block;margin-right:3rem}.social-networks__item:last-child{margin-right:0}@media (max-width:1199.98px){.social-networks__item{margin-right:2rem}}.header{align-items:center;background:#0d192a;display:flex;height:var(--headerHeight);padding-bottom:1rem;padding-top:1rem}.header-note{height:var(--headerNoteHeight)}.header .container{display:flex;height:100%}.header .row{flex-grow:1}.header__logo-col{display:flex;height:100%}.header-wrapper{left:0;position:fixed;top:0;width:100%;z-index:1000}.header__action-col{display:flex;justify-content:flex-end}.hamburger{margin-left:2rem;position:relative;z-index:101}.nav{align-items:center;display:flex;justify-content:center}.nav__item{color:#fff;font-family:EBGaramond;font-weight:500;margin-left:2rem;margin-right:2rem;text-transform:uppercase}.note{background:var(--third);color:#fff;font-family:EBGaramond;font-weight:500;overflow:hidden;padding:.5rem;text-align:center;text-overflow:ellipsis;text-transform:uppercase;white-space:nowrap}.main-screen{overflow:hidden;position:relative}.main-screen-line{display:flex;height:100%;justify-content:center;left:0;overflow:hidden;position:absolute;top:0;width:100%}.main-screen-line__img{flex-shrink:0;height:auto;max-height:90%;min-width:calc(1920px + 10%);width:110%}.main-screen-scene{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:75% 25%;height:100vh;min-height:70rem;padding-bottom:clamp(2rem,.05vh,6rem);padding-top:calc(var(--headerIndent) + clamp(2rem,.05vh,6rem))}.main-screen-scene-bottle{align-items:center;display:flex;height:100%;justify-content:center;padding-top:clamp(2rem,10vh,8rem);z-index:2}.main-screen-scene-bottle__img{height:auto;max-height:100%;max-width:100%;transform-origin:center center;width:auto}.main-screen-scene-bottle_1{grid-area:bottle-1;grid-column:1/2;grid-row:1/2}.main-screen-scene-bottle_1 .main-screen-scene-bottle__img{transform:rotate(-20deg)}.main-screen-scene-bottle_2{grid-area:bottle-2;grid-column:2/3;grid-row:1/2}.main-screen-scene-bottle_2 .main-screen-scene-bottle__img{transform:translateY(clamp(-8rem,-8vh,-1rem))}.main-screen-scene-bottle_3{grid-area:bottle-3;grid-column:3/4;grid-row:1/2}.main-screen-scene-bottle_3 .main-screen-scene-bottle__img{transform:rotate(20deg)}.main-screen-scene__octagon{align-items:center;display:flex;grid-area:octagon;grid-column:1/4;grid-row:1/3;justify-content:center}.main-screen-scene__octagon-img{max-height:100%;max-width:100%}.main-screen-scene__octagon_2 .main-screen-scene__octagon-img{max-height:calc(100% - 2rem);max-width:calc(100% - 2rem);transform:rotate(20deg)}.main-screen-scene-title{align-items:flex-start;display:flex;grid-column:1/4;grid-row:2/3;justify-content:center;padding-bottom:1rem;padding-top:1rem;z-index:2}.main-screen-scene-title__text{color:var(--third);font-family:EBGaramond;font-size:clamp(2rem,4.4vh,4.8rem);font-weight:500;margin-bottom:0;text-align:center}.button{align-items:center;border:none;display:flex;justify-content:center;letter-spacing:.15em;max-width:100%;min-height:4.8rem;padding:.5rem;text-transform:uppercase;width:40rem}.button{background:var(--third);color:#fff}.modal__main{grid-area:main;-ms-grid-column:2;-ms-grid-row:1}.callback-form{display:grid;gap:2rem 4rem;grid-template-areas:"header header" "firstName lastName" "email email" "country phone" "address address" "city code" "comments comments" "btn btn";grid-template-columns:1fr 1fr;max-width:100%;padding:2.5rem 4rem;width:72rem}.callback-form__input_first-name{grid-area:firstName;-ms-grid-column:1;-ms-grid-row:3}.callback-form__input_last-name{grid-area:lastName;-ms-grid-column:3;-ms-grid-row:3}.callback-form__input_email{-ms-grid-column-span:3;grid-area:email;-ms-grid-column:1;-ms-grid-row:5}.callback-form__input_country{grid-area:country;-ms-grid-column:1;-ms-grid-row:7}.callback-form__input_phone{grid-area:phone;-ms-grid-column:3;-ms-grid-row:7}.callback-form__input_address{-ms-grid-column-span:3;grid-area:address;-ms-grid-column:1;-ms-grid-row:9}.callback-form__input_city{grid-area:city;-ms-grid-column:1;-ms-grid-row:11}.callback-form__input_code{grid-area:code;-ms-grid-column:3;-ms-grid-row:11}.callback-form__btn{-ms-grid-column-span:3;grid-area:btn;-ms-grid-column:1;-ms-grid-row:15;width:100%}.callback-form__header{-ms-grid-column-span:3;align-items:center;display:flex;grid-area:header;-ms-grid-column:1;-ms-grid-row:1;margin-bottom:1.5rem}.callback-form__title{color:var(--primary);flex-grow:1;font-family:EBGaramond;font-size:2.4rem;font-weight:500;line-height:1.3;margin-bottom:0;text-transform:uppercase}.callback-form__close-btn{display:block;flex-shrink:0;height:15px;margin-left:1rem;position:relative;width:15px}.callback-form__close-btn:after,.callback-form__close-btn:before{background:var(--primary);content:"";display:block;height:2px;left:0;position:absolute;top:5px;transform-origin:center center;width:15px}.callback-form__close-btn:before{transform:rotate(-45deg)}.callback-form__close-btn:after{transform:rotate(45deg)}.callback-form__textarea{-ms-grid-column-span:3;grid-area:comments;-ms-grid-column:1;-ms-grid-row:13}@media (max-width:575.98px){.callback-form{gap:2rem;grid-template-areas:"header header" "firstName firstName" "lastName lastName" "email email" "country country" "phone phone" "address address" "city city" "code code" "comments comments" "btn btn";padding:2.5rem}.callback-form__title{font-size:2rem}.callback-form__header{margin-bottom:0}.callback-form__input_first-name{-ms-grid-column-span:3;-ms-grid-column:1;-ms-grid-row:3}.callback-form__input_last-name{-ms-grid-column-span:3;-ms-grid-column:1;-ms-grid-row:5}.callback-form__input_email{-ms-grid-column-span:3;-ms-grid-column:1;-ms-grid-row:7}.callback-form__input_country{-ms-grid-column-span:3;-ms-grid-column:1;-ms-grid-row:9}.callback-form__input_phone{-ms-grid-column-span:3;-ms-grid-column:1;-ms-grid-row:11}.callback-form__input_address{-ms-grid-column-span:3;-ms-grid-column:1;-ms-grid-row:13}.callback-form__input_city{-ms-grid-column-span:3;-ms-grid-column:1;-ms-grid-row:15}.callback-form__input_code{-ms-grid-column-span:3;-ms-grid-column:1;-ms-grid-row:17}.callback-form__btn{-ms-grid-column-span:3;-ms-grid-column:1;-ms-grid-row:21}.callback-form__header{-ms-grid-column-span:3;-ms-grid-column:1;-ms-grid-row:1}.callback-form__textarea{-ms-grid-column-span:3;-ms-grid-column:1;-ms-grid-row:19}}.callback-modal{display:none;max-width:90%;padding:0}@media (max-width:575.98px){.callback-modal{max-width:95%}}.mobile-menu{align-items:center;display:flex;flex-direction:column;justify-content:center;min-height:100vh;padding:2rem}.mobile-menu-item{color:var(--third)!important;font-size:5rem;font-weight:400;margin-bottom:3rem;opacity:0;text-align:center;text-transform:uppercase;transform:translateY(1rem)}.mobile-menu-item:last-child{margin-bottom:0}.mobile-menu-layout{background:rgba(19,46,90,.9);left:0;max-height:100vh;opacity:0;overflow:auto;position:fixed;top:0;visibility:hidden;width:100%;z-index:100}@media (max-width:991.98px){.mobile-menu-item{font-size:3.5rem}}@media (max-width:575.98px){.mobile-menu-item{font-size:3rem}}.body-triangle{height:auto;min-width:30rem;position:absolute;width:31.25vw;z-index:-1}.body-triangle_top{left:0;top:var(--headerNoteHeight);transform:rotate(180deg)}@media (max-width:1399.98px){html{font-size:56.3%}}
+    </style>
+    <link href="./css/style.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="./css/style.css" rel="stylesheet"></noscript>
+    <script>!function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var t,o=loadCSS.relpreload={};o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},o.poly=function(){if(!o.support())for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),o.bindMediaToggle(a))}},o.support()||(o.poly(),t=n.setInterval(o.poly,500),n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})),"undefined"!=typeof exports?exports.loadCSS=loadCSS:n.loadCSS=loadCSS}("undefined"!=typeof global?global:this);</script>
+  </head>
+
+  <body>
+    <div class="header-wrapper">
+      <div class="note header-note">FREE SHIPPING Europe-wide on all orders</div>
+      <header class="header">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-xl-2 col-4 header__logo-col">
+              <a href="#" class="logo"><img src="img/logo.svg" alt="essequa logo" class="logo__img"></a>
+            </div>
+            <div class="col-xl-8 header__nav-col d-none d-xl-block">
+              <nav class="nav">
+                <a href="#vision" class="nav__item">Our Vision</a>
+                <a href="#perfumes" class="nav__item">Perfumes</a>
+                <a href="#history" class="nav__item">our history</a>
+                <a href="#set" class="nav__item">Discovery set</a>
+                <a href="#contact" class="nav__item">Contact</a>
+              </nav>
+            </div>
+            <div class="col-xl-2 col-8 header__action-col">
+              <div class="social-networks">
+                <a href="/" class="social-networks__item" target="_blank">
+                  <svg class="icon icon-fb">
+                    <use xlink:href="#fb" />
+                  </svg> </a>
+                <a href="/" class="social-networks__item" target="_blank">
+                  <svg class="icon icon-inst">
+                    <use xlink:href="#inst" />
+                  </svg> </a>
+              </div> <button class="hamburger hamburger--collapse d-flex d-xl-none" type="button">
+                <span class="hamburger-box">
+	              <span class="hamburger-inner"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-menu-layout">
+          <div class="mobile-menu">
+            <a href="#vision" class="mobile-menu-item">Our Vision</a>
+            <a href="#perfumes" class="mobile-menu-item">Perfumes</a>
+            <a href="#history" class="mobile-menu-item">our history</a>
+            <a href="#set" class="mobile-menu-item">Discovery set</a>
+            <a href="#contact" class="mobile-menu-item">Contact</a>
+          </div>
+        </div>
+      </header>
+    </div>
+    <div class="main-screen">
+      <div class="container">
+        <div class="main-screen-scene">
+          <div class="main-screen-scene-bottle main-screen-scene-bottle_1" data-parallax-move="-20">
+            <img src="img/riviera.png" alt="essequa" class="main-screen-scene-bottle__img">
+          </div>
+          <div class="main-screen-scene-bottle main-screen-scene-bottle_2" data-parallax-move="-50">
+            <img src="img/lava.png" alt="essequa" class="main-screen-scene-bottle__img">
+          </div>
+          <div class="main-screen-scene-bottle main-screen-scene-bottle_3" data-parallax-move="-20">
+            <img src="img/sognatore.png" alt="essequa" class="main-screen-scene-bottle__img">
+          </div>
+          <div class="main-screen-scene__octagon main-screen-scene__octagon_1">
+            <img src="img/octagon.svg" alt="essequa" class="main-screen-scene__octagon-img" data-parallax-move="-10">
+          </div>
+          <div class="main-screen-scene__octagon main-screen-scene__octagon_2">
+            <img src="img/octagon-2.svg" alt="essequa" class="main-screen-scene__octagon-img" data-parallax-move="10">
+          </div>
+          <div class="main-screen-scene-title">
+            <p class="main-screen-scene-title__text" data-parallax-move="30">Eternal Olfactory Dreams</p>
+          </div>
+        </div>
+      </div>
+      <div class="main-screen-line">
+        <img src="img/main-line.png" alt="essequa" class="main-screen-line__img" data-parallax-move="-20">
+      </div>
+    </div>
+    <section class="section" id="vision">
+      <div class="container">
+        <div class="vision-list row justify-content-center">
+          <div class="col-xl-4 col-md-6 vision-list__col">
+            <div class="info-item vision-list__item">
+              <div class="info-item__icon">
+                <img src="img/info-1.svg" alt="essequa" class="info-item__icon-img" loading="lazy">
+              </div>
+              <p class="info-item__title">ETERNAL SCENT <br>TRAIL</p>
+              <p class="info-item__desc">Our niche perfumes are designed to leave an intoxicating yet refined scent trail as an exquisite vehicle of intimate self-expression</p>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-6 vision-list__col">
+            <div class="info-item vision-list__item">
+              <div class="info-item__icon">
+                <img src="img/info-2.svg" alt="essequa" class="info-item__icon-img" loading="lazy">
+              </div>
+              <p class="info-item__title">UNISEX <br>PERFUMES</p>
+              <p class="info-item__desc">We believe that our perfumes must reflect your inner nature, that’s why we broke away from traditional olfactory norms.</p>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-6 vision-list__col">
+            <div class="info-item vision-list__item">
+              <div class="info-item__icon">
+                <img src="img/info-3.svg" alt="essequa" class="info-item__icon-img" loading="lazy">
+              </div>
+              <p class="info-item__title">HIGH-QUALITY <br>INGREDIENTS</p>
+              <p class="info-item__desc">The secret of Essequa’s scents , lies in the artisanal process and quality ingredients, designed to express your true self. Unapologetically.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section class="section" id="perfumes">
+      <div class="container">
+        <h3 class="section-title">
+          <span class="section-title__text">Discover our perfumes</span>
+        </h3>
+        <div class="product-list row justify-content-center">
+          <div class="col-lg-4 col-md-6 product-list__col">
+            <a href="#callback-form" class="product product-list__item" data-fb-callback="" data-product-name="Sognatore">
+              <div class="product-photo">
+                <img src="img/product-1.png" alt="essequa" class="product-photo__img">
+              </div>
+              <div class="product__info">
+                <h2 class="product__title">Sognatore</h2>
+                <p class="product__sub-title">Spiritual perfume</p>
+                <p class="product__desc">Fresh aromatic notes to set your mind free and enter an ethereal dimension</p>
+                <div class="product-var product__var">
+                  <div class="product-var__col product-var__col-displacement">
+                    <p class="product-displacement">50 ml</p>
+                  </div>
+                  <div class="product-var__col product-var__col-price">
+                    <p class="product-price">
+                      <span class="product-price__currency">€</span>
+                      130
+                    </p>
+                  </div>
+                </div> <button class="button product__btn">
+                  BUY NOW
+                </button>
+
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 product-list__col">
+            <a href="#callback-form" class="product product-list__item" data-fb-callback="" data-product-name="Lava">
+              <div class="product-photo">
+                <img src="img/product-2.png" alt="essequa" class="product-photo__img">
+              </div>
+              <div class="product__info">
+                <h2 class="product__title">Lava</h2>
+                <p class="product__sub-title">Radiant perfume</p>
+                <p class="product__desc">Citrus top notes with seductive end notes, to dive into a cheerful summer evening.</p>
+                <div class="product-var product__var">
+                  <div class="product-var__col product-var__col-displacement">
+                    <p class="product-displacement">50 ml</p>
+                  </div>
+                  <div class="product-var__col product-var__col-price">
+                    <p class="product-price">
+                      <span class="product-price__currency">€</span>
+                      130
+                    </p>
+                  </div>
+                </div> <button class="button product__btn">
+                  BUY NOW
+                </button>
+
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 product-list__col">
+            <a href="#callback-form" class="product product-list__item" data-fb-callback="" data-product-name="Sensual perfume">
+              <div class="product-photo">
+                <img src="img/product-3.png" alt="essequa" class="product-photo__img">
+              </div>
+              <div class="product__info">
+                <h2 class="product__title">Sensual perfume</h2>
+                <p class="product__sub-title">Sensual perfume</p>
+                <p class="product__desc">Zesty spiced notes mixed with wood and resins able to rise deep emotions with a mysterious allure.</p>
+                <div class="product-var product__var">
+                  <div class="product-var__col product-var__col-displacement">
+                    <p class="product-displacement">50 ml</p>
+                  </div>
+                  <div class="product-var__col product-var__col-price">
+                    <p class="product-price">
+                      <span class="product-price__currency">€</span>
+                      130
+                    </p>
+                  </div>
+                </div> <button class="button product__btn">
+                  BUY NOW
+                </button>
+
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section class="section history-section section_d-t-indent section_d-b-indent" id="history">
+      <img src="img/history-section.jpg" alt="essequa" class="history-section__bg" loading="lazy">
+      <div class="container">
+        <h3 class="section-title">
+          <span class="section-title__text">Our History</span>
+        </h3>
+        <div class="text-field description">
+          <h3 style="text-align:center">The history of the Maison is born the moment John Sachdeva and Stefano Bonaventura met.</h3>
+          <p style="text-align:center">
+            Two very curious and creative minds that cultivate perseverance, constantly in search of pleasure, they refuse to adhere to norms. Together they decided to create olfactory stories that are the result of the impeccabile encounter of the millenary culture of perfumes of the Eastern world and the tradition of Italian and French perfume art.
+            Essequa uses only extremely high quality and highly concentrated components for their fragrances. This gives all Perfumes a much superior persistence than those of others, with the result of making them more layered, more distinguishable and unique with a variety of nuances and notes. Their creations are olfactory, evocative paths full of ancient suggestions, linked to the memories and to the emotions. <br>
+            All the Perfumes of Maison Essequa contain a minimal part of synthetic essences and ingredients, and this is an act of responsibility towards the Planet and ourselves.
+          </p>
+
+
+        </div>
+      </div>
+
+    </section>
+    <section class="section section_d-t-indent" id="set">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-0">
+            <div class="text-field discovery-set__desc">
+              <h3>DISCOVERY SET</h3>
+              <p>The discovery set is a practical sample set that contains our three fragrances in 2ml format:</p>
+              <ul>
+                <li>Sognatore</li>
+                <li>Riviera</li>
+                <li>Lava</li>
+              </ul>
+              <p>A wonderful olfactory outline that invites you to discover Essequa’s line of artistic perfumes. <br>
+                Through this aromatic path, it is possible to perceive the vision embodied in each scent and choose which one reflects your true personality best.</p>
+
+            </div>
+            <div class="product-var discovery-set__product-var">
+              <div class="product-var__col product-var__col-displacement">
+                <p class="product-displacement">3x2 ml</p>
+              </div>
+              <div class="product-var__col product-var__col-price">
+                <p class="product-price">
+                  <span class="product-price__currency">€</span>
+                  30
+                </p>
+              </div>
+            </div> <a href="#callback-form" class="button discovery-set__btn button_transparent" data-fb-callback="" data-product-name="DISCOVERY SET">
+              BUY NOW
+            </a>
+
+          </div>
+          <div class="col-lg-6 discovery-set__img-col">
+            <img src="img/discoverySet.jpg" alt="essequa" loading="lazy" class="discovery-set__img" width="640" height="464">
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section class="section" id="contact">
+      <div class="container">
+        <h3 class="section-title">
+          <span class="section-title__text">Follow @essequaperfumes on Instagram</span>
+        </h3>
+        <div class="carousel">
+          <div class="carousel__slide">
+            <a href="https://www.instagram.com" class="carousel__slide-inner" target="_blank">
+              <img src="img/slide-1.jpg" alt="essequa" loading="lazy" class="carousel__img">
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.instagram.com" class="carousel__slide-inner" target="_blank">
+              <img src="img/slide-2.jpg" alt="essequa" loading="lazy" class="carousel__img">
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.instagram.com" class="carousel__slide-inner" target="_blank">
+              <img src="img/slide-3.jpg" alt="essequa" loading="lazy" class="carousel__img">
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.instagram.com" class="carousel__slide-inner" target="_blank">
+              <img src="img/slide-1.jpg" alt="essequa" loading="lazy" class="carousel__img">
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.instagram.com" class="carousel__slide-inner" target="_blank">
+              <img src="img/slide-2.jpg" alt="essequa" loading="lazy" class="carousel__img">
+            </a>
+          </div>
+          <div class="carousel__slide">
+            <a href="https://www.instagram.com" class="carousel__slide-inner" target="_blank">
+              <img src="img/slide-3.jpg" alt="essequa" loading="lazy" class="carousel__img">
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section class="section">
+      <div class="container">
+        <h3 class="section-title section-title_no-line section-title_primary subscribe-form-title">
+          <span class="section-title__text">Sign up to receive Essequa latest news on <br>
+      products, events and special offers</span>
+        </h3>
+        <form action="" class="form subscibe-form">
+          <input type="email" class="subscibe-form__input" placeholder="Enter your email" required>
+          <button class="button button_transparent subscibe-form__btn">
+            subscibe
+          </button>
+
+        </form>
+      </div>
+
+    </section> <img src="img/triangle.png" alt="essequa" class="body-triangle body-triangle_top" loading="lazy">
+    <img src="img/triangle.png" alt="essequa" class="body-triangle body-triangle_bottom" loading="lazy">
+    <footer class="footer">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-6">
+            <a href="#" class="logo"><img src="img/logo.svg" alt="essequa logo" class="logo__img footer__logo"></a>
+          </div>
+          <div class="col-6">
+            <p class="copyright">all right reservd </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="callback-modal" id="callback-form">
+      <form action="/" class="form callback-form">
+        <header class="callback-form__header">
+          <p class="callback-form__title">CONTACT INFO AND DELIVERY</p>
+          <span class="callback-form__close-btn" data-fancybox-close=""></span>
+        </header>
+        <input name="First name" type="text" class="callback-form__input callback-form__input_first-name" placeholder="First name" required>
+        <input name="Last name" type="text" class="callback-form__input callback-form__input_last-name" placeholder="Last name" required>
+        <input name="Email" type="email" class="callback-form__input callback-form__input_email" placeholder="Email" required>
+        <input name="Country" type="text" class="callback-form__input callback-form__input_country" placeholder="Country" required>
+        <input name="Phone number" type="tel" class="callback-form__input callback-form__input_phone" placeholder="Phone number" required>
+        <input name="Address" type="text" class="callback-form__input callback-form__input_address" placeholder="Address" required>
+        <input name="City" type="text" class="callback-form__input callback-form__input_city" placeholder="City" required>
+        <input name="Post code" type="text" class="callback-form__input callback-form__input_code" placeholder="Post code" required>
+        <input type="hidden" name="Product" class="callback-form__current-product">
+        <textarea name="Comments" placeholder="Comments" class="callback-form__textarea callback-form__textarea_comments"></textarea>
+        <button class="button callback-form__btn">
+          Send order
+        </button>
+
+      </form>
+    </div> <!-- submit modal message start -->
+    <div id="submit-modal-success" data-fancybox-close="">
+      <p>Thanks!</p>
+      <p>Our managers will contact you shortly!</p>
+    </div>
+    <div id="submit-modal-error" data-fancybox-close="">
+      <p>Error!</p>
+      <p>Please check the information provided and try again!</p>
+    </div> <!-- submit modal message end -->
+    <script defer="defer" src="js/libs.js"></script>
+    <script defer="defer" src="js/common.js"></script>
+  </body>
+
+</html>
